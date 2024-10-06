@@ -7,10 +7,12 @@
 
 namespace utils { // Use a namespace for better organization
 
-    class Problems {
-    public:
-        static unsigned long calculate(const std::vector<std::string>& lines); // Declaration
-    };
+class Problems {
+public:
+    static unsigned long calculate(const std::vector<std::string>& lines); // Declaration
+    static bool calculateLength(const std::string& token);
+    static bool calculateChecksum(const std::string& token);
+};
 
 } // namespace utils
 
