@@ -31,8 +31,7 @@ FetchContent_MakeAvailable(fmt)
 add_executable(untitled3 src/main.cpp src/utils/file_operations.cpp
         src/problems.cpp
         src/problems.cpp
-        src/etl/data_pipeline.cpp
-        src/etl/data_pipeline.hpp)
+        src/etl/data_pipeline.cpp)
 
 # Link libraries
 target_link_libraries(untitled3

@@ -3,20 +3,14 @@
 #include <string>
 #include <vector>
 #include <absl/strings/strip.h>
+#include <stdexcept>
 
 namespace utils {
-// Function to trim whitespace from both ends of a string
-absl::string_view trim(const std::string& str) {
-    return absl::StripAsciiWhitespace(str);
-}
 
 
 FileOperations::FileOperations() = default;
 
-
-
 std::vector<std::string> FileOperations::readFileLines(const std::string& filePath) {
-    std::vector<std::string> lines;
     std::ifstream file(filePath);
     std::string line;
 
@@ -24,10 +18,22 @@ std::vector<std::string> FileOperations::readFileLines(const std::string& filePa
         throw std::runtime_error("Could not open file: " + filePath);
     }
 
+    size_t lineCount = 0;
     while (std::getline(file, line)) {
-        line = absl::StripAsciiWhitespace(line.erase(line.find_last_not_of('\n') + 1));
+        lineCount++;
+    }
+
+    std::vector<std::string> lines;
+    lines.reserve(lineCount);
+
+    file.clear();
+    file.seekg(0, std::ios::beg);
+
+    while (std::getline(file, line)) {
+        line = absl::StripAsciiWhitespace(line);
         lines.emplace_back(line);
     }
+
     return lines;
 }
 
