@@ -1,0 +1,47 @@
+# Ignore build directories
+/build/
+/cmake-build-debug/
+/cmake-build-release/
+
+# Ignore CMake cache and generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+
+# Ignore IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore binary files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+
+# Ignore dependency directories
+/deps/
+lib/
+
+# Ignore IDE-specific files
+*.user
+*.sublime-workspace
+*.sublime-project
+
+# Ignore generated documentation
+*.doc
+*.docx
+*.pdf
+*.html
+*.htm
+
+# Ignore temporary files
+*.tmp
+*.log
+*.swp
+*~
